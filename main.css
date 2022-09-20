@@ -1,0 +1,269 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+  font-family: "Raleway-regular";
+  src: url("./font-family/static/Raleway-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Raleway-bold";
+  src: url("./font-family/static/Raleway-Bold.ttf");
+}
+
+:root {
+  --Gradient: hsl(6, 100%, 80%), hsl(335, 100%, 65%);
+  --Pale-Blue: hsl(243, 100%, 93%);
+  --Grayish-Blue: hsl(229, 7%, 55%);
+  --Very-Dark-Blue: hsl(229, 57%, 11%);
+  --bg-blue: #1e2c69;
+  --font-sz-1: 14px;
+  --font-ff-Raleway-bold: "Raleway-bold";
+  --font-ff-Raleway-regular: "Raleway-regular";
+}
+
+img {
+  max-width: 100%;
+}
+
+body {
+  background: url("./images/bg-mobile.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: bottom left;
+  background-color: var(--Very-Dark-Blue);
+  font-size: var(--font-sz-1);
+  font-family: var(--font-ff-Raleway-regular);
+  color: var(--Pale-Blue);
+  min-height: 100vh;
+  padding: 15px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 14px;
+}
+
+body > * {
+  width: 100%;
+}
+
+header {
+  background: var(--bg-blue);
+  padding: 40px;
+  border-radius: 9px;
+  border-top-right-radius: 100px;
+  margin-top: auto;
+  max-width: 621px;
+  margin: auto auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 33px;
+}
+
+.logo {
+  height: 39px;
+  width: 135px;
+}
+
+.icon-lists {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+
+.icon {
+  padding: 13px;
+  border-radius: 8px;
+  background: var(--Very-Dark-Blue);
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon img {
+  font-size: 20px;
+}
+
+main {
+  background: var(--bg-blue);
+  max-width: 621px;
+  margin: 0 auto;
+  padding: 34px 32px 54px;
+  border-radius: 9px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+main > * {
+  width: 100%;
+}
+
+.main-text {
+  text-align: center;
+  margin-bottom: 1.1rem;
+}
+
+.scrubber-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.scrubber {
+  background: rgb(11, 11, 67);
+  display: inline-block;
+  padding: 2px;
+  height: 20px;
+  width: 100%;
+  display: grid;
+  border-radius: 50px;
+  position: relative;
+  margin-bottom: 11px;
+}
+
+.scrubber::before {
+  content: "";
+  background: linear-gradient(to right, var(--Gradient));
+  border-radius: 50px;
+  width: calc(100% - 65px);
+}
+
+.scrubber:after {
+  content: "";
+  background: white;
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  right: 70px;
+}
+
+.storage-left {
+  background: white;
+  color: var(--Grayish-Blue);
+  font-family: var(--font-ff-Raleway-regular);
+  width: 54%; /*
+  max-width: 177px;*/
+  padding: 18px 25px 16px;
+  border-radius: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  position: absolute;
+  bottom: -36px;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+}
+
+.storage-left p {
+  color: var(--Very-Dark-Blue);
+  font-family: var(--font-ff-Raleway-bold);
+  font-size: 2.1rem;
+}
+
+.storage-left span {
+  font-family: var(--font-ff-Raleway-bold);
+  font-size: 11px;
+}
+
+footer {
+  margin-top: auto;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(138, 45%, 44%);
+}
+
+@media (min-width: 1440px) {
+  body {
+    background: url("./images/bg-desktop.png");
+    background-repeat: no-repeat;
+    background-size: 100% 54%;
+    background-position: bottom left;
+    background-color: var(--Very-Dark-Blue);
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    gap: 28px;
+  }
+
+  body > * {
+    width: auto;
+  }
+
+  header {
+    margin: 0;
+    width: 350px;
+    height: 204px;
+  }
+
+  main {
+    margin: 0;
+    width: 540px;
+  }
+
+  .main-text {
+    text-align: left;
+    margin-bottom: 1rem;
+  }
+
+  .scrubber {
+    margin-bottom: 10px;
+  }
+
+  .storage-left {
+    padding: 12px 15px 10px;
+    border-radius: 8px;
+    margin: 0;
+    top: -27px;
+    bottom: unset;
+    left: unset;
+    right: 37px;
+    width: 101px;
+    gap: 7px;
+  }
+
+  .storage-left::after {
+    content: "";
+    border: 15px solid transparent;
+    border-right-color: white;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    transform: translateY(50%);
+  }
+
+  .storage-left p {
+    font-size: 1rem;
+  }
+
+  .storage-left span {
+    font-size: 8px;
+  }
+
+  footer {
+    width: 100%;
+    margin: 0;
+  }
+}
